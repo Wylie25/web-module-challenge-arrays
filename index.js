@@ -148,9 +148,15 @@ console.log(copy(originalFlavors, newFlavors));
   hint - you can use the .includes method to help you solve this */
 
 function filterByWord(originalFlavors, flavor) {
-  if (originalFlavors === flavor)
-    var Chocolate = originalFlavors.include("Chocolate");
+  let specialFlavor = [];
+  for (let i = 0; i < originalFlavors.length; i++)
+    if (originalFlavors[i].includes(flavor)) {
+      specialFlavor.push(originalFlavors[i]);
+    }
+  return specialFlavor;
 }
+
+console.log(filterByWord(originalFlavors, "Chocolate"));
 
 /* 🧁🍦🍨 STRETCH 🍨🍦🍫*/
 
@@ -177,7 +183,7 @@ and should return a new array called randomFlavors with a length 31.
 forExample, getRandomFlavors(originalFlavors, newFlavors, seasonalFlavors, regionalFlavors) might return ["Strawberry Cheesecake", "Eggnog,"..."Chocolate"].*/
 
 // Data ⬇️
-var newFlavors = [
+var Flavors = [
   "Date night",
   "U.S.S Butterscotch (Stranger Things special)",
   "Honey Almond",
